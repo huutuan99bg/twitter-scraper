@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+a {
+    color: #49a4f4;
+}
+
+.page-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.pannel-title {
+    margin: 2px 0;
+}
+
+label {
+    display: block;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+#followers-username,
+#tweet-id {
+    max-width: 85%;
+    float: left;
+}
+
+#btn-search-user,
+#btn-load-tweet {
+    float: right;
+}
+
+#btn-scrapy-followers {
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#btn-load-user {
+    float: right;
+}
+
+.form-group {
+    clear: both;
+    margin-bottom: 5px;
+}
+
+.user-info-followers {
+    margin-left: 20px;
+}
+
+.user-info-following,
+.user-info-followers {
+    font-weight: bold;
+}
+
+.user-info-avatar img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #6bc0e0;
+    border-radius: 50%;
+    padding: 5px;
+    background: #c1e4f9a8;
+}
+
+.user-info-name {
+    display: block;
+    width: max-content;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.user-info-username {
+    color: #858585;
+    margin-right: 20px;
+}
+
+.user-info-id {
+    font-weight: bold;
+}
+
+#followers-user-loaded {
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    margin-top: 15px;
+    display: block;
+    float: left;
+    font-weight: bold;
+}
+
+.user-info-panel,
+.tweet-info-panel {
+    border-left: 1px solid #e1e1e1;
+}
+
+.warning {
+    color: #f32424;
+}
+
+#btn-stop-scrapy-followers {
+    clear: both;
+}
+
+.fl-l {
+    float: left;
+}
+
+.fl-r {
+    float: right;
+}
+
+.tweet-info-author-avt img {
+    border-radius: 50%;
+}
+
+.tweet-info-author-details {
+    margin-left: 8px;
+}
+
+.tweet-info-author-name {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.tweet-info-author-username {
+    display: block;
+    color: #818181;
+}
+
+.tweet-info-author-avatar {
+    height: 50px;
+}
+
+.tweet-details {
+    clear: both;
+    margin-top: 15px;
+    font-size: 23px;
+}
+
+.tweet-count-details a {
+    color: #8d8d8d;
+    font-size: 15px;
+    margin-right: 10px;
+
+}
+
+.tweet-content {
+    margin-bottom: 20px;
+}
+
+.tweet-time {
+    color: #8d8d8d;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.tweet-time,
+.tweet-count-details {
+    border-top: 1px solid #e7e7e7;
+}
+
+.retweets-count,
+.retweets-quote-count,
+.like-count,
+.reply-count {
+    font-weight: bold;
+    color: #000;
+}

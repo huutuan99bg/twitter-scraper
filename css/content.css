@@ -1,0 +1,9 @@
+.btn-twitter-scrapper{
+    border:none;
+    color: #fff;
+    background: #ffaf38;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    float: left;
+}

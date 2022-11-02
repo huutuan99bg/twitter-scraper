@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Javascript -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/handlers.js"></script>
+    <script src="./js/script.js"></script>
+    <title>Twitter Scrapper</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="page-title">Twitter Scrapper</h1>
+        <h3 class="warning login-warning hidden">Login twitter is required!</h3>
+        <div class="panel-group followers-scrapper">
+            <div class="panel panel-info">
+                <!-- Heading -->
+                <div class="panel-heading">
+                    <h3 class="pannel-title">
+                        Followers scrapper
+                    </h3>
+                </div>
+
+                <div class="panel-body">
+                    <!-- Control -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="followers-username">Twitter username:</label>
+                            <input type="text" class="form-control" id="followers-username" placeholder="@elonmusk">
+                            <button id="btn-load-user" class="btn btn-info">Load</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="followers-limit">Limit scrapper:</label>
+                            <input type="number" value="100" class="form-control" id="followers-limit">
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-scrapy-followers" type="submit" class="btn btn-info" disabled>Crawl</button>
+                            <span id="followers-user-loaded"></span>
+                        </div>
+                        <div class="form-group progress-control-followers hidden">
+                            <div class="alert alert-success" id="crawl-progress">
+                            </div>
+                            <button id="btn-stop-scrapy-followers" type="submit" class="btn btn-danger">Stop
+                                crawl</button>
+                            <button id="btn-copy-scrapy-followers" type="submit" class="btn">Copy to clipboard</button>
+                        </div>
+                    </div>
+                    <!-- User info -->
+                    <div class="col-md-6 user-info-panel hidden">
+                        <div class="user-info-avatar">
+                            <a class="user-info-link" href="" target="_blank">
+                                <img src="" alt="">
+                            </a>
+                        </div>
+
+                        <p><a class="user-info-link user-info-name" href="" target="_blank"></a></p>
+
+                        <p><span class="user-info-username">@abc</span>ID: <span class="user-info-id">...</span></p>
+                        <p>
+                            <span class="user-info-following">0</span> Following
+                            <span class="user-info-followers">0</span> Followers
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-group retweets-scrapper">
+            <div class="panel panel-info">
+                <!-- Heading -->
+                <div class="panel-heading">
+                    <h3 class="pannel-title">
+                        Retweets scrapper
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <!-- Control -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="tweet-id">Tweet link/id:</label>
+                            <input type="text" class="form-control" id="tweet-id"
+                                placeholder="https://twitter.com/elonmusk/status/1552813560320901122">
+                            <button id="btn-load-tweet" class="btn btn-info">Load</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="retweets-limit">Limit scrapper:</label>
+                            <input type="number" min="1" value="1" limit-retweets="0" limit-quotes="0" limit-replies="0"
+                                class="form-control" id="retweets-limit">
+                        </div>
+                        <div class="form-group">
+                            <div class="radio">
+                                <label><input type="radio" name="retweets-scrapy-option" value="1" checked>Retweet
+                                    users</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="retweets-scrapy-option" value="2">Quote tweet
+                                    links</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="retweets-scrapy-option" value="3">Quote tweet
+                                    links + username</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="retweets-scrapy-option" value="4">Reply links</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-scrapy-retweets" type="submit" class="btn btn-info" disabled>Crawl</button>
+                            <span id="retweets-loaded"></span>
+                        </div>
+
+                        <div class="form-group progress-control-retweets hidden">
+                            <div class="alert alert-success" id="crawl-retweets-progress">
+                            </div>
+                            <button id="btn-stop-scrapy-retweets" type="submit" class="btn btn-danger">Stop
+                                crawl</button>
+                            <button id="btn-copy-scrapy-retweets" type="submit" class="btn">Copy to clipboard</button>
+                        </div>
+                    </div>
+                    <!-- Tweet info -->
+                    <div class="col-md-6 tweet-info-panel hidden">
+                        <div class="tweet-info-author-avatar">
+                            <a class="tweet-info-author-link" href="" target="_blank">
+                                <div class="tweet-info-author-avt fl-l">
+                                    <img src="" alt="" width="50" height="50">
+                                </div>
+                                <div class="tweet-info-author-details fl-l">
+                                    <span class="tweet-info-author-name">ABC</span>
+                                    <span class="tweet-info-author-username">@abc</span>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="tweet-details">
+                            <div class="tweet-content">
+
+                            </div>
+                            <div class="tweet-time">
+                            </div>
+                            <div class="tweet-count-details">
+                                <a href="" class="retweets-count-link"><span class="retweets-count">0</span>
+                                    Retweets</a>
+                                <a href="" class="retweets-quote-count-link"><span class="retweets-quote-count">0</span>
+                                    Quote Retweets</a>
+                                <a href="" class="like-count-link"><span class="like-count">0</span> Likes</a>
+                                <a href="" class="reply-count-link"><span class="reply-count">0</span> Replies</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
